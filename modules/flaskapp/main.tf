@@ -40,7 +40,7 @@ resource "azurerm_mysql_flexible_server" "database" {
   backup_retention_days  = 7
   sku_name               = "B_Standard_B1ms"
   version                = "8.0.21"
-  zone                   = 1
+  zone                   = 2
   tags = {
     Service = "Database",
     Stage = "${upper(var.stage)}"
@@ -77,6 +77,11 @@ resource "azurerm_linux_web_app" "wa-testapp" {
     always_on = false
     app_command_line = "gunicorn --bind=0.0.0.0:8000 --timeout 600 todo:app"
   }
+}
+
+resource "azurerm_source_control_token" "token" {
+  type  = "GitHub"
+  token = "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"
 }
 
 #  Deploy code from a public GitHub repo
