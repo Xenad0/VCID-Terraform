@@ -17,3 +17,13 @@ module "resourcegroups" {
   location = var.resource_group_location
   stage = "PROD"
 }
+
+module "flaskapp" {
+  source = "./modules/flaskapp"
+  
+  location = var.resource_group_location
+  stage = "PROD"
+  random = random_id.randomprefix.hex
+  rgstorage = "${module.resourcegroups.rgname_storage}"
+  rgwebapps = "${module.resourcegroups.rgname_webapps}"
+}
