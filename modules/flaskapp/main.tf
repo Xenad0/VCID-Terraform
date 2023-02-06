@@ -40,6 +40,7 @@ resource "azurerm_mysql_flexible_server" "database" {
   backup_retention_days  = 7
   sku_name               = "B_Standard_B1ms"
   version                = "8.0.21"
+  zone                   = 1
   tags = {
     Service = "Database",
     Stage = "${upper(var.stage)}"
