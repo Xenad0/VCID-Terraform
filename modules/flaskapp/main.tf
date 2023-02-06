@@ -81,7 +81,7 @@ resource "azurerm_linux_web_app" "wa-testapp" {
 
 resource "azurerm_source_control_token" "token" {
   type  = "GitHub"
-  token = "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"
+  token = "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"
 }
 
 #  Deploy code from a public GitHub repo
