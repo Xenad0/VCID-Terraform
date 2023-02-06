@@ -91,9 +91,9 @@ resource "azurerm_app_service_source_control" "sourcecontrol" {
   branch             = "main"
   scm_type           = "GitHubAction"
   uses_github_action = true
-  
+
   github_action_configuration { 
-          - generate_workflow_file = true
-          - linux_action           = true 
+    generate_workflow_file = true
+    linux_action           = true 
   }
 }
