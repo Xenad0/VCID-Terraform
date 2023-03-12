@@ -26,6 +26,6 @@ module "flaskapp" {
   random = random_id.randomprefix.hex
   rgstorage = "${module.resourcegroups.rgname_storage}"
   rgwebapps = "${module.resourcegroups.rgname_webapps}"
-  skuwebapps = "F1"
+  skuwebapps = "B1"
   oswebapps = "Linux"
 }

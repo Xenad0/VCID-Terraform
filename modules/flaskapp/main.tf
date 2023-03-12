@@ -74,8 +74,8 @@ resource "azurerm_linux_web_app" "wa-testapp" {
     application_stack {
       python_version    = "3.10"
     }
-    always_on = false
-    app_command_line = "gunicorn --bind=0.0.0.0:8000 --timeout 600 todo:app"
+    always_on = true
+    app_command_line = ""
   }
 }
 
